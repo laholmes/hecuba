@@ -1,6 +1,11 @@
 # hecuba
 A football analysis tool written in python
 
+uses 
+- peewee
+- sqlite
+- flask
+
 TODO
 - take 538 predictions and input into SQLite DB (python + peewee)
 - key matches to game week
