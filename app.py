@@ -43,11 +43,6 @@ def after_request(response):
     g.db.close()
     return response
 
-@app.route('/')
-def homepage():
-    teams = Team.select()
-    return object_list('teams.html', teams, 'team_list')
-
 # run from cmd
 if __name__ == '__main__':
     app.run()

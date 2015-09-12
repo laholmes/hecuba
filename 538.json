@@ -1,0 +1,15 @@
+"year": 2015,
+"weeks": [
+    {
+        "number": 1,
+        "games": [
+            {
+                "awayTeam":,
+                "homeTeam":,
+                "homeTeamWeighting":,
+                "awayTeamWeighting":,
+                "betfairPrice":
+            }
+        ]
+    }
+]
