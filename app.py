@@ -7,7 +7,7 @@ from flask import url_for, abort, render_template, flash
 from functools import wraps
 from hashlib import md5
 from peewee import *
-from models.Team import Team
+from models.bet import Bet
 
 DEBUG = True
 SECRET_KEY = 'hin6bab8ge25*r=x&amp;+5$0kn=-#log$pt^#@vrqjld!^2ci@g*b'
@@ -42,6 +42,10 @@ def before_request():
 def after_request(response):
     g.db.close()
     return response
+
+def create_tables():
+    database.connect()
+    database.create_tables([Bet])
 
 # run from cmd
 if __name__ == '__main__':
