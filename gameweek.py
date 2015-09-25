@@ -15,7 +15,7 @@ def print_bets(year, week):
         print(g.gsis_id)
         print(g)
 
-def calc_bets(week, threshold):
+def calc_bets(data, week, threshold):
     bets = []
     q.game(season_year=2015, season_type='Regular', week=week)
     for g in q.as_games():

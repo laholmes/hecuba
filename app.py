@@ -18,7 +18,7 @@ with open("538.json") as data_file:
     data = json.load(data_file)
 
     for week in ["1","2", "3"]:
-        bets.append(gameweek.calc_bets(week, threshold))
+        bets.append(gameweek.calc_bets(data, week, threshold))
 
     print(bets)
     #save_bets(bets)
