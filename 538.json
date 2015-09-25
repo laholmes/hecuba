@@ -270,130 +270,130 @@
                 "2015092400": {
                     "awayTeam": "Washington Redskins",
                     "homeTeam": "New York Giants",
-                    "awayTeamWeighting": ,
-                    "homeTeamWeighting": ,
-                    "betfairPriceAway": ,
-                    "betfairPriceHome":
+                    "awayTeamWeighting": 0.32,
+                    "homeTeamWeighting": 0.68,
+                    "betfairPriceAway": 2.5,
+                    "betfairPriceHome": 0.29
                 },
                 "2015092700": {
                     "awayTeam": "Atlanta Falcons",
                     "homeTeam": "Dallas Cowboys",
-                    "awayTeamWeighting": ,
-                    "homeTeamWeighting": ,
-                    "betfairPriceAway": ,
-                    "betfairPriceHome":
+                    "awayTeamWeighting": 0.25,
+                    "homeTeamWeighting": 0.75,
+                    "betfairPriceAway": 0.8,
+                    "betfairPriceHome": 1
                 },
                 "2015092701": {
                     "awayTeam": "New Orleans Saints",
                     "homeTeam": "Carolina Panthers",
-                    "awayTeamWeighting": ,
-                    "homeTeamWeighting": ,
-                    "betfairPriceAway": ,
-                    "betfairPriceHome":
+                    "awayTeamWeighting": 0.25,
+                    "homeTeamWeighting": 0.75,
+                    "betfairPriceAway": 1.625,
+                    "betfairPriceHome": 0.5
                 },
                 "2015092702": {
                     "awayTeam": "Philadelphia Eagles",
                     "homeTeam": "New York Jets",
-                    "awayTeamWeighting": ,
-                    "homeTeamWeighting": ,
-                    "betfairPriceAway": ,
-                    "betfairPriceHome":
+                    "awayTeamWeighting": 0.41,
+                    "homeTeamWeighting": 0.58,
+                    "betfairPriceAway": 1.05,
+                    "betfairPriceHome": 0.77
                 },
                 "2015092703": {
                     "awayTeam": "Tampa Bay Buccaneers",
                     "homeTeam": "Houston Texans",
-                    "awayTeamWeighting": ,
-                    "homeTeamWeighting": ,
-                    "betfairPriceAway": ,
-                    "betfairPriceHome":
+                    "awayTeamWeighting": 0.27,
+                    "homeTeamWeighting": 0.72,
+                    "betfairPriceAway": 2.2,
+                    "betfairPriceHome": 0.36
                 },
                 "2015092704": {
                     "awayTeam": "San Diego Chargers",
                     "homeTeam": "Minnesota Vikings",
-                    "awayTeamWeighting": ,
-                    "homeTeamWeighting": ,
-                    "betfairPriceAway": ,
-                    "betfairPriceHome":
+                    "awayTeamWeighting": 0.46,
+                    "homeTeamWeighting": 0.53,
+                    "betfairPriceAway": 1.1,
+                    "betfairPriceHome": 0.73
                 },
                 "2015092705": {
                     "awayTeam": "Pittsburgh Steelers",
                     "homeTeam": "St Louis Rams",
-                    "awayTeamWeighting": ,
-                    "homeTeamWeighting": ,
-                    "betfairPriceAway": ,
-                    "betfairPriceHome":
+                    "awayTeamWeighting": 0.57,
+                    "homeTeamWeighting": 0.43,
+                    "betfairPriceAway": 0.9,
+                    "betfairPriceHome": 0.9
                 },
                 "2015092706": {
                     "awayTeam": "Jacksonville Jaguars",
                     "homeTeam": "New England Patriots",
-                    "awayTeamWeighting": ,
-                    "homeTeamWeighting": ,
-                    "betfairPriceAway": ,
-                    "betfairPriceHome":
+                    "awayTeamWeighting": 0.09,
+                    "homeTeamWeighting": 0.91,
+                    "betfairPriceAway": 7.0,
+                    "betfairPriceHome": 0.08
                 },
                 "2015092707": {
                     "awayTeam": "Cincinnati Bengals",
                     "homeTeam": "Baltimore Ravens",
-                    "awayTeamWeighting": ,
-                    "homeTeamWeighting": ,
-                    "betfairPriceAway": ,
-                    "betfairPriceHome":
+                    "awayTeamWeighting": 0.46,
+                    "homeTeamWeighting": 0.54,
+                    "betfairPriceAway": 1.25,
+                    "betfairPriceHome": 0.67
                 },
                 "2015092708": {
                     "awayTeam": "Oakland Raiders",
                     "homeTeam": "Cleveland Browns",
-                    "awayTeamWeighting": ,
-                    "homeTeamWeighting": ,
-                    "betfairPriceAway": ,
-                    "betfairPriceHome":
+                    "awayTeamWeighting": 0.37,
+                    "homeTeamWeighting": 0.63,
+                    "betfairPriceAway": 1.5,
+                    "betfairPriceHome": 0.5
                 },
                 "2015092709": {
                     "awayTeam": "Indianapolis Colts",
                     "homeTeam": "Tennessee Titans",
-                    "awayTeamWeighting": ,
-                    "homeTeamWeighting": ,
-                    "betfairPriceAway": ,
-                    "betfairPriceHome":
+                    "awayTeamWeighting": 0.62,
+                    "homeTeamWeighting": 0.38,
+                    "betfairPriceAway": 0.57,
+                    "betfairPriceHome": 1.4
                 },
                 "2015092710": {
                     "awayTeam": "San Francisco 49ers",
                     "homeTeam": "Arizona Cardinals",
-                    "awayTeamWeighting": ,
-                    "homeTeamWeighting": ,
-                    "betfairPriceAway": ,
-                    "betfairPriceHome":
+                    "awayTeamWeighting": 0.33,
+                    "homeTeamWeighting": 0.67,
+                    "betfairPriceAway": 2.125,
+                    "betfairPriceHome": 1.35
                 },
                 "2015092711": {
                     "awayTeam": "Chicago Bears",
                     "homeTeam": "Seattle Seahawks",
-                    "awayTeamWeighting": ,
-                    "homeTeamWeighting": ,
-                    "betfairPriceAway": ,
-                    "betfairPriceHome":
+                    "awayTeamWeighting": 0.14,
+                    "homeTeamWeighting": 0.51,
+                    "betfairPriceAway": 7.5,
+                    "betfairPriceHome": 0.07
                 },
                 "2015092712": {
                     "awayTeam": "Buffalo Bills",
                     "homeTeam": "Miami Dolphins",
-                    "awayTeamWeighting": ,
-                    "homeTeamWeighting": ,
-                    "betfairPriceAway": ,
-                    "betfairPriceHome":
+                    "awayTeamWeighting": 0.49,
+                    "homeTeamWeighting": 0.51,
+                    "betfairPriceAway": 1.35,
+                    "betfairPriceHome": 0.62
                 },
                 "2015092713": {
                     "awayTeam": "Denver Broncos",
                     "homeTeam": "Detroit Lions",
-                    "awayTeamWeighting": ,
-                    "homeTeamWeighting": ,
-                    "betfairPriceAway": ,
-                    "betfairPriceHome":
+                    "awayTeamWeighting": 0.59,
+                    "homeTeamWeighting": 0.4,
+                    "betfairPriceAway": 0.59,
+                    "betfairPriceHome": 1.35
                 },
                 "2015092800": {
                     "awayTeam": "Kansas City Chiefs",
                     "homeTeam": "Green Bay Packers",
-                    "awayTeamWeighting": ,
-                    "homeTeamWeighting": ,
-                    "betfairPriceAway": ,
-                    "betfairPriceHome":
+                    "awayTeamWeighting": 0.28,
+                    "homeTeamWeighting": 0.72,
+                    "betfairPriceAway": 2.5,
+                    "betfairPriceHome": 0.3
                 }
             }
         }
