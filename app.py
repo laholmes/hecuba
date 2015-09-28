@@ -18,10 +18,11 @@ with open("538.json") as data_file:
     data = json.load(data_file)
 
     for week in ["1","2", "3"]:
-        bets.append(gameweek.calc_bets(data, week, threshold))
+        gameweek_bets = gameweek.calc_bets(data, week, threshold)
+        bets.append(gameweek_bets)
+        gameweek.save_bets(gameweek_bets)
 
     print(bets)
-    #save_bets(bets)
 
 # multiple trials for a given edge, assuming mean error = 0
 # for the bets selected, generate random outcome set, 1000 times, show mean winning, std dev

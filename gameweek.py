@@ -46,12 +46,12 @@ def calc_bets(data, week, threshold):
 
 def save_bets(bets):
     for bet in bets:
-        # segment on week -> bankroll inc
-        print(bet)
-        size = betting.KellySize(bet.netOdds, bet.percentageWin, bankroll)
+        size = betting.kelly_size(bet.netOdds, bet.percentageWin, bankroll)
+        proportion = betting.kelly_proportion(bet.netOdds, bet.percentageWin)
 
         Bet.create(
             game_id = bet["gameId"],
+            proportion = proportion,
             amount = size,
             date = datetime.datetime.now(),
             odds = bet["netOdds"]
