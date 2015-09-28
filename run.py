@@ -6,5 +6,5 @@ sys.path.insert(0, '../..')
 import db
 db.initialize()
 
-from app import app
-app.run()
+import app
+app.main()

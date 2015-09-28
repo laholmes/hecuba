@@ -2,8 +2,7 @@
 # http://charlesleifer.com/docs/peewee/peewee/models.html#model-api-smells-like-django
 from peewee import *
 
-DATABASE = 'hecuba.db'
-database = SqliteDatabase(DATABASE)
+database = SqliteDatabase('hecuba.db')
 
 class Base(Model):
     class Meta:

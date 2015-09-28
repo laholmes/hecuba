@@ -1,6 +1,5 @@
 import nfldb
 import json
-from pprint import pprint
 import betting
 from models.bet import Bet
 import datetime
@@ -44,10 +43,10 @@ def calc_bets(data, week, threshold):
             })
     return bets
 
-def save_bets(bets):
+def save_bets(bets, bankroll):
     for bet in bets:
-        size = betting.kelly_size(bet.netOdds, bet.percentageWin, bankroll)
-        proportion = betting.kelly_proportion(bet.netOdds, bet.percentageWin)
+        size = betting.kelly_size(bet['netOdds'], bet['percentageWin'], bankroll)
+        proportion = betting.kelly_proportion(bet['netOdds'], bet['percentageWin'])
 
         Bet.create(
             game_id = bet["gameId"],
@@ -56,3 +55,7 @@ def save_bets(bets):
             date = datetime.datetime.now(),
             odds = bet["netOdds"]
         )
+
+        # for foo in Bet.select():
+        #     print('from db!')
+        #     print(foo.game_id)

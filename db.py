@@ -1,6 +1,5 @@
 from models.bet import Bet
 from peewee import *
-from models.bet import Bet
 
 DATABASE = 'hecuba.db'
 database = SqliteDatabase(DATABASE)

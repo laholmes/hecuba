@@ -1,28 +1,20 @@
-import nfldb
 import json
-from pprint import pprint
-import betting
-import datetime
 import gameweek
-
-DEBUG = True
-SECRET_KEY = 'hin6bab8ge25*r=x&amp;+5$0kn=-#log$pt^#@vrqjld!^2ci@g*b'
-db = nfldb.connect()
-q = nfldb.Query(db)
 
 threshold = 0.04
 bets = []
 bankroll = 100
 
-with open("538.json") as data_file:
-    data = json.load(data_file)
+def main():
+    with open("538.json") as data_file:
+        data = json.load(data_file)
 
-    for week in ["1","2", "3"]:
-        gameweek_bets = gameweek.calc_bets(data, week, threshold)
-        bets.append(gameweek_bets)
-        gameweek.save_bets(gameweek_bets)
+        for week in ["1","2", "3"]:
+            gameweek_bets = gameweek.calc_bets(data, week, threshold)
+            gameweek.save_bets(gameweek_bets, bankroll)
+            bets.append(gameweek_bets)
 
-    print(bets)
+        print(bets)
 
 # multiple trials for a given edge, assuming mean error = 0
 # for the bets selected, generate random outcome set, 1000 times, show mean winning, std dev
