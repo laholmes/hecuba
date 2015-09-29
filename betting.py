@@ -7,12 +7,6 @@ def kelly_proportion(net_odds, prob_win):
 def kelly_size(net_odds, prob_win, bankroll):
     return kelly_proportion(net_odds, prob_win) * bankroll
 
-
-# assume 538 correct, betfair price out, calculate average profit for
-# given edge, run 1000 times, calc mean and std dev
-
-#loads of numpy in here
-
 def simulate(bet, simulations, iterations)
     returns = []
     wins = 0
@@ -37,5 +31,10 @@ def simulate(bet, simulations, iterations)
 
     std = np.std(returns)
     var = np.var(returns)
+    mean = np.mean(returns)
 
     print(returns)
+
+
+def sharpe_ratio(expected_return, std_dev, risk_free):
+    return (expected_return - risk_free) / std_dev
