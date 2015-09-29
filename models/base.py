@@ -1,4 +1,4 @@
-# base model pattern - subclasses will automatically use the correct storage
+# base model pattern
 # http://charlesleifer.com/docs/peewee/peewee/models.html#model-api-smells-like-django
 from peewee import *
 

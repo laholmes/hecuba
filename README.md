@@ -7,7 +7,7 @@ Where profitable opportunities exist (i.e. win rate higher than required breakev
 
 hecuba uses nfldb/nflgame (postgres) for underlying db of players/games/teams, augmenting with prediction stats from 538.
 
-hecuba saves bets to a sqlite db.
+hecuba saves bets to a sqlite db, using pewee ORM.
 
 TODO
 - simulate game runs 1000 times (based on 538 predictions) w/100 unit portfolio, weighting according to kelly

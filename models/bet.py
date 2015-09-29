@@ -1,5 +1,7 @@
 from base import Base
 from peewee import *
+from status import Status
+from account import Account
 
 class Bet(Base):
     game_id = IntegerField()
@@ -7,4 +9,5 @@ class Bet(Base):
     proportion = DecimalField()
     odds = DecimalField(null=True)
     date = DateField()
-    won = BooleanField(null= True)
+    status = ForeignKeyField(Status, related_name='status')
+    account = ForeignKeyField(Account, related_name='account')
