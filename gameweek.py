@@ -49,7 +49,9 @@ def save_bets(bets, bankroll):
         proportion = betting.kelly_proportion(bet['netOdds'], bet['percentageWin'])
 
         Bet.insert(
+            team = bet['team'],
             game_id = bet['gameId'],
+            percentage_win = bet['percentageWin'],
             proportion = proportion,
             amount = size,
             date = datetime.datetime.now(),
@@ -65,7 +67,8 @@ def save_bets(bets, bankroll):
 # def get_bets(gameweek):
 #     Bet.get(Bet.)
 
-
 def get_bets():
     bets = Bet.get()
     return bets
+
+def place

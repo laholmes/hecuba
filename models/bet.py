@@ -7,6 +7,7 @@ class Bet(Base):
     game_id = IntegerField()
     amount = DecimalField()
     proportion = DecimalField()
+    percentage_win = DecimalField()
     odds = DecimalField(null=True)
     date = DateField()
     status = ForeignKeyField(Status, related_name='status')
