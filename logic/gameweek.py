@@ -1,6 +1,6 @@
 import nfldb
 import json
-import betting
+import utilities.math_utilities as math_utilities
 from models.bet import Bet
 import datetime
 
@@ -31,7 +31,8 @@ def calc_bets(data, week, threshold):
                 'team': 'home',
                 'gameId': g.gsis_id,
                 'netOdds': betfairPriceHome,
-                'percentageWin': homeTeamWeighting
+                'percentageWin': homeTeamWeighting,
+                'gameweek': week
             })
 
         if(betfairAwayPercentage + threshold <= awayTeamWeighting):
@@ -39,14 +40,15 @@ def calc_bets(data, week, threshold):
                 'team': 'away',
                 'gameId': g.gsis_id,
                 'netOdds': betfairPriceAway,
-                'percentageWin': awayTeamWeighting
+                'percentageWin': awayTeamWeighting,
+                'gameweek': week
             })
     return bets
 
 def save_bets(bets, bankroll):
     for bet in bets:
-        size = betting.kelly_size(bet['netOdds'], bet['percentageWin'], bankroll)
-        proportion = betting.kelly_proportion(bet['netOdds'], bet['percentageWin'])
+        size = math_utilities.kelly_size(bet['netOdds'], bet['percentageWin'], bankroll)
+        proportion = math_utilities.kelly_proportion(bet['netOdds'], bet['percentageWin'])
 
         Bet.insert(
             team = bet['team'],
@@ -57,12 +59,9 @@ def save_bets(bets, bankroll):
             date = datetime.datetime.now(),
             odds = bet['netOdds'],
             status = 0,
-            account = 0
+            account = 0,
+            gameweek = bet['gameweek']
         )
-
-        # for foo in Bet.select():
-        #     print('from db!')
-        #     print(foo.game_id)
 
 # def get_bets(gameweek):
 #     Bet.get(Bet.)
@@ -71,4 +70,9 @@ def get_bets():
     bets = Bet.get()
     return bets
 
-def place
+def place_bets(week):
+    Bet.update(status = 1).where(gameweek = week)
+
+#checks nfldb for result and updates bet records/portfolio based on result
+def checkForResult():
+    return

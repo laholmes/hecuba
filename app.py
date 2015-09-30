@@ -1,12 +1,12 @@
 import json
-import gameweek
+import logic.gameweek as gameweek
 
 threshold = 0.04
 bets = []
 bankroll = 100
 
 def main():
-    with open("538.json") as data_file:
+    with open("data/538.json") as data_file:
         data = json.load(data_file)
 
         for week in ["1","2", "3"]:

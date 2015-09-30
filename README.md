@@ -18,3 +18,4 @@ TODO
 - mean is predicted win
 - place bets and record outcome
 - scraper for 538
+- extract interaction with nfldb to service

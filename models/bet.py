@@ -5,6 +5,7 @@ from account import Account
 
 class Bet(Base):
     game_id = IntegerField()
+    gameweek = IntegerField()
     amount = DecimalField()
     proportion = DecimalField()
     percentage_win = DecimalField()
