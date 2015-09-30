@@ -13,7 +13,9 @@ def print_games(year, week):
     q.game(season_year=year, season_type='Regular', week=week)
     for g in q.as_games():
         print(g.gsis_id)
-        print(g)
+        print(g.finished)
+        print(g.home_score)
+        print(g.away_score)
 
 def calc_bets(data, week):
     bets = []
@@ -78,17 +80,18 @@ def place_bets(week):
 #checks nfldb for result and updates bet records/portfolio based on result
 def checkForResult(week):
     #update each bet to correct Status
-
-    profit = 0
-    # games for a given gameweek
-    q.game(season_year=year, season_type='Regular', week=week)
-    for g in q.as_games():
-        if(g.state = win)
-            gameweek_bets[g.gsis_id]
-            Bet.update({'state' = 3}).where(game_id = g.gsis_id)
-            profit += gameweek_bets[g.gsis_id].amount * gameweek_bets[g.gsis_id].odds
-        else
-            Bet.update({'state' = 4}).where(game_id = g.gsis_id)
-            profit -= gameweek_bets[g.gsis_id].amount
-
-    Account.update({'bankroll': bankroll + profit}).where(id = 1)
+    return
+    #have finished flag on each game - so just run on all that have finished
+    # profit = 0
+    # # games for a given gameweek
+    # q.game(season_year=year, season_type='Regular', week=week)
+    # for g in q.as_games():
+    #     if(g.state = win)
+    #         gameweek_bets[g.gsis_id]
+    #         Bet.update({'state' = 3}).where(game_id = g.gsis_id)
+    #         profit += gameweek_bets[g.gsis_id].amount * gameweek_bets[g.gsis_id].odds
+    #     else
+    #         Bet.update({'state' = 4}).where(game_id = g.gsis_id)
+    #         profit -= gameweek_bets[g.gsis_id].amount
+    #
+    # Account.update({'bankroll': bankroll + profit}).where(id = 1)
