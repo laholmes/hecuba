@@ -2,6 +2,7 @@ import nfldb
 import json
 import utilities.math_utilities as math_utilities
 from models.bet import Bet
+from models.account import Account
 import datetime
 
 db = nfldb.connect()
@@ -14,7 +15,7 @@ def print_games(year, week):
         print(g.gsis_id)
         print(g)
 
-def calc_bets(data, week, threshold):
+def calc_bets(data, week):
     bets = []
     q.game(season_year=2015, season_type='Regular', week=week)
     for g in q.as_games():
@@ -45,7 +46,8 @@ def calc_bets(data, week, threshold):
             })
     return bets
 
-def save_bets(bets, bankroll):
+def save_bets(bets):
+    bankroll = Account.get().bankroll
     for bet in bets:
         size = math_utilities.kelly_size(bet['netOdds'], bet['percentageWin'], bankroll)
         proportion = math_utilities.kelly_proportion(bet['netOdds'], bet['percentageWin'])
@@ -74,5 +76,19 @@ def place_bets(week):
     Bet.update(status = 1).where(gameweek = week)
 
 #checks nfldb for result and updates bet records/portfolio based on result
-def checkForResult():
-    return
+def checkForResult(week):
+    #update each bet to correct Status
+
+    profit = 0
+    # games for a given gameweek
+    q.game(season_year=year, season_type='Regular', week=week)
+    for g in q.as_games():
+        if(g.state = win)
+            gameweek_bets[g.gsis_id]
+            Bet.update({'state' = 3}).where(game_id = g.gsis_id)
+            profit += gameweek_bets[g.gsis_id].amount * gameweek_bets[g.gsis_id].odds
+        else
+            Bet.update({'state' = 4}).where(game_id = g.gsis_id)
+            profit -= gameweek_bets[g.gsis_id].amount
+
+    Account.update({'bankroll': bankroll + profit}).where(id = 1)

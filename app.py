@@ -1,17 +1,15 @@
 import json
 import logic.gameweek as gameweek
 
-threshold = 0.04
 bets = []
-bankroll = 100
 
 def main():
     with open("data/538.json") as data_file:
         data = json.load(data_file)
 
-        for week in ["1","2", "3"]:
-            gameweek_bets = gameweek.calc_bets(data, week, threshold)
-            gameweek.save_bets(gameweek_bets, bankroll)
+        for week in ["1","2","3"]:
+            gameweek_bets = gameweek.calc_bets(data, week)
+            gameweek.save_bets(gameweek_bets)
             bets.append(gameweek_bets)
 
         print(bets)

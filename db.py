@@ -16,7 +16,11 @@ def seed_data():
     for state in states:
         Status.insert(**state)
 
-    Account.insert(**{'name': 'primary', 'bankroll': 100})
+    Account.insert(**{
+        'name': 'primary',
+        'bankroll': 100,
+        'threshold': 0.04
+    })
 
 def initialize():
     """Create the database and the table if they don't exist."""
