@@ -10,12 +10,9 @@ hecuba uses nfldb/nflgame (postgres) for underlying db of players/games/teams, a
 hecuba saves bets to a sqlite db, using pewee ORM.
 
 TODO
-- simulate game runs 1000 times (based on 538 predictions) w/100 unit portfolio, weighting according to kelly
-- analyse std dev and variance
+- simulate game runs 1000 times (based on 538 predictions) w/100 unit portfolio, weighting according to kelly + analyse
 - then try other weightings - monte carlo to find optimal
 - try adjusting threshold, look at impact on risk-adjusted return
-- find optimal threshold w/monte carlo
-- mean is predicted win
 - place bets and record outcome
 - scraper for 538
 - extract interaction with nfldb to service
