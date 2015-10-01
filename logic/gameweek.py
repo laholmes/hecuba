@@ -1,26 +1,23 @@
-import nfldb
-import json
 import utilities.math_utilities as math_utilities
+import utilities.nfldb_service as nfldb_service
 from models.bet import Bet
 from models.account import Account
 import datetime
 
-db = nfldb.connect()
-q = nfldb.Query(db)
-
 # print games for a given gameweek
 def print_games(year, week):
-    q.game(season_year=year, season_type='Regular', week=week)
-    for g in q.as_games():
-        print(g.gsis_id)
-        print(g.finished)
-        print(g.home_score)
-        print(g.away_score)
+    games = nfldb_service.gameweek_games()
+    for game in games:
+        print(game.gsis_id)
+        print(game)
+        # print(g.finished)
+        # print(g.home_score)
+        # print(g.away_score)
 
 def calc_bets(data, week):
     bets = []
-    q.game(season_year=2015, season_type='Regular', week=week)
-    for g in q.as_games():
+    games = nfldb_service.gameweek_games()
+    for game in games:
         betfairPriceHome = data['weeks'][week]['games'][g.gsis_id]['betfairPriceHome']
         betfairPriceAway = data['weeks'][week]['games'][g.gsis_id]['betfairPriceAway']
         homeTeamWeighting = data['weeks'][week]['games'][g.gsis_id]['homeTeamWeighting']
@@ -84,6 +81,15 @@ def checkForResult(week):
     #have finished flag on each game - so just run on all that have finished
     # profit = 0
     # # games for a given gameweek
+    # get games we made a bet for
+    # q.game(gsis_id = bet.gsis_id)
+    # for g in q.as_games():
+    # if(g.finished)
+    # if(g.home_score > g.away_score)
+    #
+    # else
+    #   away win
+    #   if()
     # q.game(season_year=year, season_type='Regular', week=week)
     # for g in q.as_games():
     #     if(g.state = win)
