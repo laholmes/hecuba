@@ -5,11 +5,11 @@ from models.account import Account
 import datetime
 
 # print games for a given gameweek
-def print_games(year, week):
-    games = nfldb_service.gameweek_games()
-    for game in games:
-        print(game.gsis_id)
-        print(game)
+# def print_games(year, week):
+#     games = nfldb_service.gameweek_games()
+#     for game in games:
+#         print(game.gsis_id)
+#         print(game)
         # print(g.finished)
         # print(g.home_score)
         # print(g.away_score)
@@ -28,7 +28,7 @@ def calc_bets(data, week):
 
         if(betfairHomePercentage + threshold <= homeTeamWeighting):
             bets.append({
-                'team': 'home',
+                'away': 0,
                 'gameId': g.gsis_id,
                 'netOdds': betfairPriceHome,
                 'percentageWin': homeTeamWeighting,
@@ -37,7 +37,7 @@ def calc_bets(data, week):
 
         if(betfairAwayPercentage + threshold <= awayTeamWeighting):
             bets.append({
-                'team': 'away',
+                'away': 1,
                 'gameId': g.gsis_id,
                 'netOdds': betfairPriceAway,
                 'percentageWin': awayTeamWeighting,
@@ -76,28 +76,30 @@ def place_bets(week):
 
 #checks nfldb for result and updates bet records/portfolio based on result
 def checkForResult(week):
-    #update each bet to correct Status
-    return
-    #have finished flag on each game - so just run on all that have finished
-    # profit = 0
-    # # games for a given gameweek
-    # get games we made a bet for
-    # q.game(gsis_id = bet.gsis_id)
-    # for g in q.as_games():
-    # if(g.finished)
-    # if(g.home_score > g.away_score)
-    #
-    # else
-    #   away win
-    #   if()
-    # q.game(season_year=year, season_type='Regular', week=week)
-    # for g in q.as_games():
-    #     if(g.state = win)
-    #         gameweek_bets[g.gsis_id]
-    #         Bet.update({'state' = 3}).where(game_id = g.gsis_id)
-    #         profit += gameweek_bets[g.gsis_id].amount * gameweek_bets[g.gsis_id].odds
-    #     else
-    #         Bet.update({'state' = 4}).where(game_id = g.gsis_id)
-    #         profit -= gameweek_bets[g.gsis_id].amount
-    #
-    # Account.update({'bankroll': bankroll + profit}).where(id = 1)
+    profit = 0
+    bets = filter(lambda x: x.gameweek == week, get_bets())
+
+    for bet in bets:
+        game = nfldb_service.get_game(bet.game_id)
+        if(game.finished)
+            if(game.home_score > game.away_score)
+                profit = update_profit(!bet.away).profit
+                state = update_profit(!bet.away).state
+            else
+                profit = update_profit(bet.away).profit
+                state = update_profit(bet.away).state
+
+        Bet.update({'state': state}).where(game_id = g.gsis_id)
+
+    Account.update({'bankroll': bankroll + profit}).where(id = 1)
+
+def update_profit(won):
+    profit = 0
+    if (won)
+        state = 3
+        profit += gameweek_bets[game.gsis_id].amount * gameweek_bets[game.gsis_id].odds
+    else
+        state = 4
+        profit -= gameweek_bets[game.gsis_id].amount
+
+    return {'profit': profit, 'state': state}

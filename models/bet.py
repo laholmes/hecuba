@@ -11,5 +11,6 @@ class Bet(Base):
     percentage_win = DecimalField()
     odds = DecimalField(null=True)
     date = DateField()
+    away = BooleanField()
     status = ForeignKeyField(Status, related_name='status')
     account = ForeignKeyField(Account, related_name='account')
