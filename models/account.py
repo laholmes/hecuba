@@ -3,5 +3,5 @@ from peewee import *
 
 class Account(Base):
     name = CharField()
-    bankroll = DecimalField()
-    threshold = DecimalField()
+    bankroll = FloatField()
+    threshold = FloatField()

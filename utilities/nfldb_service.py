@@ -1,4 +1,5 @@
 # wrap access to nfldb
+
 import nfldb
 
 db = nfldb.connect()

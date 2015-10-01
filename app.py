@@ -12,6 +12,9 @@ def main():
             gameweek.save_bets(gameweek_bets)
             bets.append(gameweek_bets)
 
+            #update bets
+            gameweek.check_for_result()
+
         print(bets)
 
 # run from cmd

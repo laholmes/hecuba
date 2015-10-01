@@ -14,13 +14,13 @@ def seed_data():
         {'name': 'won'},
         {'name': 'lost'}]
     for state in states:
-        Status.insert(**state)
+        Status.insert(**state).execute()
 
-    Account.insert(**{
-        'name': 'primary',
-        'bankroll': 100,
-        'threshold': 0.04
-    })
+    Account.insert(
+        name = 'primary',
+        bankroll = 100,
+        threshold = 0.04
+    ).execute()
 
 def initialize():
     """Create the database and the table if they don't exist."""
