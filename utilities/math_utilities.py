@@ -1,5 +1,4 @@
 import random
-import numpy as np
 
 def kelly_proportion(net_odds, prob_win):
     return (prob_win * (net_odds + 1) - 1) / net_odds

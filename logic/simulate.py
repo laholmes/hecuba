@@ -1,3 +1,6 @@
+import random
+import numpy as np
+
 def simulate(bet, simulations, iterations)
     returns = []
     wins = 0

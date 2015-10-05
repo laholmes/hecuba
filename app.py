@@ -4,6 +4,7 @@ import logic.gameweek as gameweek
 bets = []
 
 def main():
+    # json_key = json.load(open('config.json'))
     with open("data/538.json") as data_file:
         data = json.load(data_file)
 
@@ -11,9 +12,8 @@ def main():
             gameweek_bets = gameweek.calc_bets(data, week)
             gameweek.save_bets(gameweek_bets)
             bets.append(gameweek_bets)
+            gameweek.check_for_result(week)
 
-            #update bets
-            gameweek.check_for_result()
 
         print(bets)
 

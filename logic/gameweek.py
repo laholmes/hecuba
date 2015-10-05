@@ -57,8 +57,8 @@ def save_bets(bets):
             gameweek = bet['gameweek']
         ).execute()
 
-def get_bets():
-    bets = Bet.get()
+def get_bets(week):
+    bets = Bet.select().where(Bet.gameweek == week).execute()
     return bets
 
 def place_bets(week):
@@ -67,10 +67,12 @@ def place_bets(week):
 #checks nfldb for result and updates bet records/portfolio based on result
 def check_for_result(week):
     profit = 0
-    bets = filter(lambda x: x.gameweek == week, get_bets())
+    bets = get_bets(week)
+    print(bets)
+    # bets = filter(lambda x: x.gameweek == week, get_bets())
 
     for bet in bets:
-        game = nfldb_service.get_game(bet.game_id)
+        game = nfldb_service.game(bet.game_id)
         if(game.finished):
             if(game.home_score > game.away_score):
                 profit = update_profit(bet.away == False).profit
