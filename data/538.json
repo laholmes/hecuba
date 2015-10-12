@@ -367,7 +367,7 @@
                     "awayTeam": "Chicago Bears",
                     "homeTeam": "Seattle Seahawks",
                     "awayTeamWeighting": 0.14,
-                    "homeTeamWeighting": 0.51,
+                    "homeTeamWeighting": 0.86,
                     "betfairPriceAway": 7.5,
                     "betfairPriceHome": 0.07
                 },

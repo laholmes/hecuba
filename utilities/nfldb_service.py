@@ -10,3 +10,12 @@ def gameweek_games(year, week):
 
 def game(id):
     return q.game(gsis_id == id).as_games()
+
+# print games for a given gameweek
+def print_games(year, week):
+    games = gameweek_games(year, week)
+    for game in games:
+        print(game.gsis_id)
+        print(game)
+
+print_games(2015, 6)
